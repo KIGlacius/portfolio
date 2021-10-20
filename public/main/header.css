@@ -1,0 +1,101 @@
+.link {
+  margin-right: 6px;
+  padding: 4px 2px;
+  color: whitesmoke;
+  border: 1px solid whitesmoke;
+  text-decoration: none;
+}
+
+.link:hover {
+  margin-bottom: 6px;
+  transition: 0.2s;
+  transition-delay: 0.05s;
+}
+
+.navigation {
+  padding: 0 12px;
+}
+
+.header-hbs {
+  height: 48px;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: seagreen;
+  width: 100%;
+  align-items: center;
+  color: whitesmoke;
+}
+
+.page__links {
+  padding: 0 24px;
+  flex-grow: 1;
+  height: 48px;
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#Kayl {
+  margin-left: 16px;
+}
+
+.footer {
+  background-color: seagreen;
+  color: whitesmoke;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.menu-links {
+  border: 1px solid seagreen;
+  background-color: seagreen;
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-link {
+  color: whitesmoke;
+  padding: 4px 0;
+  border-bottom: 1px solid whitesmoke;
+  text-decoration: none;
+}
+
+.menu-link:last-of-type {
+  border: none;
+  border-bottom: 0;
+}
+
+.menu-link:hover {
+  background-color: thistle;
+}
+
+@media screen and (max-width: 1060px) {
+  .navigation,
+  .link {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+
+  .fa-bars {
+    height: 20px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .header-hbs {
+    height: 90px !important;
+  }
+}

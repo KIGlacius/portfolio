@@ -1,0 +1,17 @@
+body {
+  font-family: 'Nanum Gothic', sans-serif;
+  background-color: beige;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.error {
+  width: 50%;
+  margin: auto;
+  color: seagreen;
+  text-align: center;
+  flex-grow: 1;
+  margin-top: 50px;
+  font-size: 3rem;
+}

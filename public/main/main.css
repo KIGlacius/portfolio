@@ -1,0 +1,116 @@
+body {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: beige;
+  color: rgb(28, 32, 27);
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+#github-link {
+  margin-top: 4px;
+  border: 2px solid seagreen;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+#github-link:hover {
+  background-color: thistle;
+}
+
+#links__link {
+  margin-right: 0;
+  color: seagreen;
+  border: none;
+  text-decoration: underline;
+}
+
+.links__container {
+  margin: 2px 0;
+  border-bottom: 1px solid seagreen;
+  padding: 4px 0;
+}
+
+.links,
+.bio {
+  border-radius: 6px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 50px;
+}
+
+.bio {
+  margin-right: 0;
+}
+
+#bio__body,
+.links__body {
+  line-height: 1.5rem;
+}
+
+#links__title,
+#bio__title {
+  border-radius: 6px 6px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+  width: 100%;
+  text-align: center;
+  height: 24px;
+  background-color: seagreen;
+}
+.main {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile {
+  align-self: flex-start;
+  margin-left: 50px;
+  margin-bottom: 200px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__pic {
+  border-radius: 4px;
+  height: 400px;
+  width: 300px;
+  display: block;
+}
+
+.hidden {
+  opacity: 0;
+  position: absolute;
+}
+
+@media screen and (max-width: 1060px) {
+  .main {
+    width: 50%;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .links {
+    margin-right: 0;
+  }
+
+  .profile {
+    margin-bottom: 50px;
+    margin-left: 0;
+    align-self: center;
+  }
+
+  .links,
+  .bio {
+    margin: 20px 0;
+  }
+}
