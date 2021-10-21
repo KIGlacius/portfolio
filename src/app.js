@@ -6,6 +6,7 @@ const partialsPath = path.join(__dirname, '../templates/partials');
 const hbs = require('hbs');
 hbs.registerPartials(partialsPath);
 const app = express();
+const port = process.env.PORT || 3000;
 app.set('view engine', 'hbs');
 app.set('views', viewsPath);
 app.use(express.static(publicDirectoryPath));
@@ -25,4 +26,4 @@ app.get('*', (req, res) => {
   res.render('404');
 });
 
-app.listen(3000);
+app.listen(port);
