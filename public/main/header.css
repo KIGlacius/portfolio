@@ -75,7 +75,8 @@
 }
 
 .menu-link:hover {
-  background-color: thistle;
+  background-color: rgb(255, 250, 255);
+  color: seagreen;
 }
 
 @media screen and (max-width: 1060px) {
@@ -95,7 +96,24 @@
 }
 
 @media screen and (max-width: 300px) {
+  #Kayl {
+    font-size: small;
+  }
+
   .header-hbs {
     height: 90px !important;
+  }
+
+  .menu-links {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    top: 90px;
+  }
+
+  .menu-link {
+    padding: 8px;
+    border: none;
+    font-size: small;
   }
 }

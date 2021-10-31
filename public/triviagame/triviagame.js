@@ -1,213 +1,192 @@
-// import imgGokuBase from "url:/imgs/goku_base.png";
-// import imgGokuRight from "url:/imgs/goku_right.png";
-// import imgGokuWrong from "url:/imgs/goku_wrong.png";
-// import imgYoruichiBase from "url:/imgs/yoruichi_base.png";
-// import imgYoruichiRight from "url:/imgs/yoruichi_right.png";
-// import imgYoruichiWrong from "url:/imgs/yoruichi_wrong.png";
-// import imgLaxusBase from "url:/imgs/laxus_base.png";
-// import imgLaxusRight from "url:/imgs/laxus_right.png";
-// import imgLaxusWrong from "url:/imgs/laxus_wrong.png";
-// import imgVegetaBase from "url:/imgs/vegeta_base.png";
-// import imgVegetaRight from "url:/imgs/vegeta_right.png";
-// import imgVegetaWrong from "url:/imgs/vegeta_wrong.png";
-// import imgIchigoBase from "url:/imgs/ichigo_base.png";
-// import imgIchigoRight from "url:/imgs/ichigo_right.png";
-// import imgIchigoWrong from "url:/imgs/ichigo_wrong.png";
-// import imgSaitoBase from "url:/imgs/saito_base.png";
-// import imgSaitoRight from "url:/imgs/saito_right.png";
-// import imgSaitoWrong from "url:/imgs/saito_wrong.png";
-// import "core-js/stable";
-// import "regenerator-runtime/runtime";
-
 //..............................Selector variables....................................
-const confirmContainer = document.querySelector('.confirm__container');
-const container = document.querySelector('.container');
-const startIcon = document.querySelector('.container__icon');
-const scoreNumEl = document.querySelector('.score__num');
-const iconAnswer = document.querySelector('.right__answer');
-const gokuIcon = document.querySelector('.goku__icon');
-const gokuHoverBox = document.querySelector('.goku__hover');
-const imgGokuBase = '../imgs/goku_base.png';
-const imgGokuRight = '../imgs/goku_right.png';
-const imgGokuWrong = '../imgs/goku_wrong.png';
-const yoruichiIcon = document.querySelector('.yoruichi__icon');
-const yoruichiHoverBox = document.querySelector('.yoruichi__hover');
-const imgYoruichiBase = '../imgs/yoruichi_base.png';
-const imgYoruichiRight = '../imgs/yoruichi_right.png';
-const imgYoruichiWrong = '../imgs/yoruichi_wrong.png';
-const laxusIcon = document.querySelector('.laxus__icon');
-const laxusHoverBox = document.querySelector('.laxus__hover');
-const imgLaxusBase = '../imgs/laxus_base.png';
-const imgLaxusRight = '../imgs/laxus_right.png';
-const imgLaxusWrong = '../imgs/laxus_wrong.png';
-const vegetaHoverBox = document.querySelector('.vegeta__hover');
-const vegetaIcon = document.querySelector('.vegeta__icon');
-const imgVegetaBase = '../imgs/vegeta_base.png';
-const imgVegetaRight = '../imgs/vegeta_right.png';
-const imgVegetaWrong = '../imgs/vegeta_wrong.png';
-const ichigoHoverBox = document.querySelector('.ichigo__hover');
-const ichigoIcon = document.querySelector('.ichigo__icon');
-const imgIchigoBase = '../imgs/ichigo_base.png';
-const imgIchigoRight = '../imgs/ichigo_right.png';
-const imgIchigoWrong = '../imgs/ichigo_wrong.png';
-const saitoHoverBox = document.querySelector('.saito__hover');
-const saitoIcon = document.querySelector('.saito__icon');
-const imgSaitoBase = '../imgs/saito_base.png';
-const imgSaitoRight = '../imgs/saito_right.png';
-const imgSaitoWrong = '../imgs/saito_wrong.png';
-const scoreBox = document.querySelector('.score__box');
-const icons = document.querySelectorAll('.icons');
-const overlay = document.querySelector('.overlay');
-const btnClose = document.querySelector('.close__window');
-const btnStart = document.querySelector('.start');
-const answerBox = document.querySelectorAll('.answer');
-const restartBtn = document.querySelector('.restart');
+const confirmContainer = document.querySelector(".confirm__container");
+const container = document.querySelector(".container");
+const startIcon = document.querySelector(".container__icon");
+const scoreNumEl = document.querySelector(".score__num");
+const iconAnswer = document.querySelector(".right__answer");
+const gokuIcon = document.querySelector(".goku__icon");
+const gokuHoverBox = document.querySelector(".goku__hover");
+const imgGokuBase = "../imgs/goku_base.png";
+const imgGokuRight = "../imgs/goku_right.png";
+const imgGokuWrong = "../imgs/goku_wrong.png";
+const yoruichiIcon = document.querySelector(".yoruichi__icon");
+const yoruichiHoverBox = document.querySelector(".yoruichi__hover");
+const imgYoruichiBase = "../imgs/yoruichi_base.png";
+const imgYoruichiRight = "../imgs/yoruichi_right.png";
+const imgYoruichiWrong = "../imgs/yoruichi_wrong.png";
+const laxusIcon = document.querySelector(".laxus__icon");
+const laxusHoverBox = document.querySelector(".laxus__hover");
+const imgLaxusBase = "../imgs/laxus_base.png";
+const imgLaxusRight = "../imgs/laxus_right.png";
+const imgLaxusWrong = "../imgs/laxus_wrong.png";
+const vegetaHoverBox = document.querySelector(".vegeta__hover");
+const vegetaIcon = document.querySelector(".vegeta__icon");
+const imgVegetaBase = "../imgs/vegeta_base.png";
+const imgVegetaRight = "../imgs/vegeta_right.png";
+const imgVegetaWrong = "../imgs/vegeta_wrong.png";
+const ichigoHoverBox = document.querySelector(".ichigo__hover");
+const ichigoIcon = document.querySelector(".ichigo__icon");
+const imgIchigoBase = "../imgs/ichigo_base.png";
+const imgIchigoRight = "../imgs/ichigo_right.png";
+const imgIchigoWrong = "../imgs/ichigo_wrong.png";
+const saitoHoverBox = document.querySelector(".saito__hover");
+const saitoIcon = document.querySelector(".saito__icon");
+const imgSaitoBase = "../imgs/saito_base.png";
+const imgSaitoRight = "../imgs/saito_right.png";
+const imgSaitoWrong = "../imgs/saito_wrong.png";
+const scoreBox = document.querySelector(".score__box");
+const icons = document.querySelectorAll(".icons");
+const overlay = document.querySelector(".overlay");
+const btnClose = document.querySelector(".close__window");
+const btnStart = document.querySelector(".start");
+const answerBox = document.querySelectorAll(".answer");
+const restartBtn = document.querySelector(".restart");
 
 // Misc variables
 
-let body = document.querySelector('body');
-let html = '';
+let body = document.querySelector("body");
+let html = "";
 let scoreNum = 3;
-let gameStartedKey = '';
+let gameStartedKey = "";
 //..............................Question bank........................................
 const questionGokuOne = {
-  question: 'What planet was Goku born on?',
-  questionAnswers: ['Earth', 'Vegeta', 'Saiyan', 'Namek'],
+  question: "What planet was Goku born on?",
+  questionAnswers: ["Earth", "Vegeta", "Saiyan", "Namek"],
 };
 
 const questionGokuTwo = {
-  question: 'What technique can only Goku use?',
+  question: "What technique can only Goku use?",
   questionAnswers: [
-    'Instant Transmission',
-    'Solar Flare',
-    'Super Saiyan 3',
-    'Kamehameha',
+    "Instant Transmission",
+    "Solar Flare",
+    "Super Saiyan 3",
+    "Kamehameha",
   ],
 };
 
 const questionGokuThree = {
-  question: 'Which character did Goku first use Super Saiyan 3 against?',
-  questionAnswers: ['Kid Buu', 'Fat Buu', 'Super Buu', 'Evil Buu'],
+  question: "Which character did Goku first use Super Saiyan 3 against?",
+  questionAnswers: ["Kid Buu", "Fat Buu", "Super Buu", "Evil Buu"],
 };
 
 const questionYoruichiOne = {
-  question: 'What technique did Yoruichi create?',
-  questionAnswers: ['Sokatsui', 'Haien', 'Shunko', 'Raikoho'],
+  question: "What technique did Yoruichi create?",
+  questionAnswers: ["Sokatsui", "Haien", "Shunko", "Raikoho"],
 };
 
 const questionYoruichiTwo = {
-  question: 'Yoruichi is also known as?',
+  question: "Yoruichi is also known as?",
   questionAnswers: [
-    'Black Cat',
-    'Goddess of Flash',
-    'Shunko Master',
-    'Captain of Squad Two',
+    "Black Cat",
+    "Goddess of Flash",
+    "Shunko Master",
+    "Captain of Squad Two",
   ],
 };
 
 const questionYoruichiThree = {
-  question: 'Yoruichi is from which noble clan?',
-  questionAnswers: ['Shihoin', 'Shiba', 'Kuchiki', 'Omaeda'],
+  question: "Yoruichi is from which noble clan?",
+  questionAnswers: ["Shihoin", "Shiba", "Kuchiki", "Omaeda"],
 };
 
 const questionLaxusOne = {
-  question: 'The founder of Fairy Tail is what to Laxus?',
+  question: "The founder of Fairy Tail is what to Laxus?",
   questionAnswers: [
-    'His grandfather',
-    'His father',
-    'His brother',
-    'His sister',
+    "His grandfather",
+    "His father",
+    "His brother",
+    "His sister",
   ],
 };
 
 const questionLaxusTwo = {
   question: "What is Laxus' power?",
-  questionAnswers: ['Fire', 'Water', 'Lightning', 'Ice'],
+  questionAnswers: ["Fire", "Water", "Lightning", "Ice"],
 };
 
 const questionLaxusThree = {
   question: "Where is Laxus' guild mark location?",
-  questionAnswers: ['His chest', 'His thigh', 'His abdomen', 'His arm'],
+  questionAnswers: ["His chest", "His thigh", "His abdomen", "His arm"],
 };
 
 const questionVegetaOne = {
   question:
-    'Against which opponent did Vegeta use his signature move Final Flash?',
-  questionAnswers: ['Frieza', 'Cell', 'Majin Buu', 'Android 18'],
+    "Against which opponent did Vegeta use his signature move Final Flash?",
+  questionAnswers: ["Frieza", "Cell", "Majin Buu", "Android 18"],
 };
 
 const questionVegetaTwo = {
-  question: 'Why did Vegeta attack Beerus after Beerus first arrived on Earth?',
+  question: "Why did Vegeta attack Beerus after Beerus first arrived on Earth?",
   questionAnswers: [
-    'Beerus threatened Earth',
-    'Vegeta wanted to fight',
-    'Beerus slapped Bulma',
-    'Beerus is a joke character',
+    "Beerus threatened Earth",
+    "Vegeta wanted to fight",
+    "Beerus slapped Bulma",
+    "Beerus is a joke character",
   ],
 };
 
 const questionVegetaThree = {
-  question: 'Why did Vegeta lose to Frost?',
+  question: "Why did Vegeta lose to Frost?",
   questionAnswers: [
-    'Frost was stronger',
-    'Frost cheated',
-    'Vegeta was arrogant',
-    'Someone intervened',
+    "Frost was stronger",
+    "Frost cheated",
+    "Vegeta was arrogant",
+    "Someone intervened",
   ],
 };
 
 const questionIchigoOne = {
   question: "What is the name of Ichigo's bankai?",
   questionAnswers: [
-    'Senbonzakura Kageyoshi',
-    'Daiguren Hyorinmaru',
-    'Tensa Zangetsu',
-    'Jakuho Raikoben',
+    "Senbonzakura Kageyoshi",
+    "Daiguren Hyorinmaru",
+    "Tensa Zangetsu",
+    "Jakuho Raikoben",
   ],
 };
 
 const questionIchigoTwo = {
   question: "Who is Ichigo's wife?",
   questionAnswers: [
-    'Rukia Kuchiki',
-    'Orihime Inoue',
-    'Neliel Tu Odershvank',
-    'Soi Fon',
+    "Rukia Kuchiki",
+    "Orihime Inoue",
+    "Neliel Tu Odershvank",
+    "Soi Fon",
   ],
 };
 
 const questionIchigoThree = {
   question: "What is the source of Ichigo's power?",
-  questionAnswers: ['Shinigami', 'Hollow', 'Quincy', 'All of the above'],
+  questionAnswers: ["Shinigami", "Hollow", "Quincy", "All of the above"],
 };
 
 const questionSaitoOne = {
-  question: 'What pro-shogunate force is Saito a member of?',
+  question: "What pro-shogunate force is Saito a member of?",
   questionAnswers: [
-    'Shinsengumi',
-    'Chosu rebels',
-    'Satsuma domain',
-    'Tosa domain',
+    "Shinsengumi",
+    "Chosu rebels",
+    "Satsuma domain",
+    "Tosa domain",
   ],
 };
 
 const questionSaitoTwo = {
-  question: 'What is Saito known as?',
+  question: "What is Saito known as?",
   questionAnswers: [
-    'The bear of Japan',
-    'The wolf of Mibu',
-    'The flying swordsman',
-    'The claw',
+    "The bear of Japan",
+    "The wolf of Mibu",
+    "The flying swordsman",
+    "The claw",
   ],
 };
 
 const questionSaitoThree = {
-  question: 'What name did Saito choose after going into hiding?',
+  question: "What name did Saito choose after going into hiding?",
   questionAnswers: [
-    'Akechi Goro',
-    'Mishima Eiji',
-    'Fujita Goro',
-    'Sagara Sanosuke',
+    "Akechi Goro",
+    "Mishima Eiji",
+    "Fujita Goro",
+    "Sagara Sanosuke",
   ],
 };
 //..............................Functions.............................................
@@ -224,12 +203,12 @@ const restartGame = function () {
 
 // Hide character snippet
 const hideHoverBox = function () {
-  gokuHoverBox.style.visibility = 'hidden';
-  yoruichiHoverBox.style.visibility = 'hidden';
-  laxusHoverBox.style.visibility = 'hidden';
-  vegetaHoverBox.style.visibility = 'hidden';
-  ichigoHoverBox.style.visibility = 'hidden';
-  saitoHoverBox.style.visibility = 'hidden';
+  gokuHoverBox.style.visibility = "hidden";
+  yoruichiHoverBox.style.visibility = "hidden";
+  laxusHoverBox.style.visibility = "hidden";
+  vegetaHoverBox.style.visibility = "hidden";
+  ichigoHoverBox.style.visibility = "hidden";
+  saitoHoverBox.style.visibility = "hidden";
 };
 
 // Show confirm window
@@ -256,11 +235,11 @@ const generateLostWindow = function () {
 // Game lost
 
 const lostGame = () => {
-  overlay.classList.remove('hidden');
-  scoreBox.style.visibility = 'hidden';
-  startIcon.innerHTML = '';
-  iconAnswer.innerHTML = '';
-  container.style.height = '100vh';
+  overlay.classList.remove("hidden");
+  scoreBox.style.visibility = "hidden";
+  startIcon.innerHTML = "";
+  iconAnswer.innerHTML = "";
+  container.style.height = "100vh";
   html = generateLostWindow();
   container.innerHTML = html;
 };
@@ -275,17 +254,17 @@ const generateWonWindow = function () {
 
 // Game won
 const wonGame = () => {
-  overlay.classList.remove('hidden');
-  scoreBox.style.visibility = 'hidden';
-  iconAnswer.classList.add('hidden');
-  startIcon.innerHTML = '';
-  container.style.height = '100vh';
+  overlay.classList.remove("hidden");
+  scoreBox.style.visibility = "hidden";
+  iconAnswer.classList.add("hidden");
+  startIcon.innerHTML = "";
+  container.style.height = "100vh";
   container.innerHTML = generateWonWindow();
 };
 // Close window and go back to main page
 const closeConfirmWindow = function () {
-  overlay.classList.add('hidden');
-  confirmContainer.innerHTML = '';
+  overlay.classList.add("hidden");
+  confirmContainer.innerHTML = "";
 };
 
 // Change icon and icon text
@@ -296,15 +275,15 @@ const changeIcon = function (charName, imgType, iconStr, charImg) {
   src="${charImg}"
   alt="Start ${charName[0].toUpperCase() + charName.slice(1)}"
 />`;
-  iconAnswer.classList.remove('hidden');
+  iconAnswer.classList.remove("hidden");
   iconAnswer.textContent = iconStr;
 };
 
 // Start game and go to first question
 const startGame = function (charQuestions, questionNum) {
-  container.innerHTML = '';
-  scoreBox.style.visibility = 'visible';
-  overlay.classList.add('hidden');
+  container.innerHTML = "";
+  scoreBox.style.visibility = "visible";
+  overlay.classList.add("hidden");
   container.innerHTML = `<div class='game'>
   <span class="restart">Restart</span>
   <span class='question__field'>
@@ -324,268 +303,268 @@ const startGame = function (charQuestions, questionNum) {
 // Event handler for character icons
 for (const icon of icons) {
   // Show character snippet on hover
-  icon.addEventListener('mouseover', function (e) {
-    if (e.target.alt === 'Goku') gokuHoverBox.style.visibility = 'visible';
-    if (e.target.alt === 'Yoruichi')
-      yoruichiHoverBox.style.visibility = 'visible';
-    if (e.target.alt === 'Laxus') laxusHoverBox.style.visibility = 'visible';
-    if (e.target.alt === 'Vegeta') vegetaHoverBox.style.visibility = 'visible';
-    if (e.target.alt === 'Ichigo') ichigoHoverBox.style.visibility = 'visible';
-    if (e.target.alt === 'Saito') saitoHoverBox.style.visibility = 'visible';
+  icon.addEventListener("mouseover", function (e) {
+    if (e.target.alt === "Goku") gokuHoverBox.style.visibility = "visible";
+    if (e.target.alt === "Yoruichi")
+      yoruichiHoverBox.style.visibility = "visible";
+    if (e.target.alt === "Laxus") laxusHoverBox.style.visibility = "visible";
+    if (e.target.alt === "Vegeta") vegetaHoverBox.style.visibility = "visible";
+    if (e.target.alt === "Ichigo") ichigoHoverBox.style.visibility = "visible";
+    if (e.target.alt === "Saito") saitoHoverBox.style.visibility = "visible";
   });
   // Hide character snippet on mouseout
-  icon.addEventListener('mouseout', function () {
+  icon.addEventListener("mouseout", function () {
     hideHoverBox();
   });
   // Show confirmation box on click
-  icon.addEventListener('click', function (e) {
-    if (e.target.alt === 'Goku') {
-      overlay.classList.remove('hidden');
-      html = generateConfirmWindow('Goku', 'Dragon Ball');
-      confirmContainer.insertAdjacentHTML('afterbegin', html);
+  icon.addEventListener("click", function (e) {
+    if (e.target.alt === "Goku") {
+      overlay.classList.remove("hidden");
+      html = generateConfirmWindow("Goku", "Dragon Ball");
+      confirmContainer.insertAdjacentHTML("afterbegin", html);
     }
-    if (e.target.alt === 'Yoruichi') {
-      overlay.classList.remove('hidden');
-      html = generateConfirmWindow('Yoruichi', 'Bleach');
-      confirmContainer.insertAdjacentHTML('afterbegin', html);
-    }
-
-    if (e.target.alt === 'Laxus') {
-      overlay.classList.remove('hidden');
-      html = generateConfirmWindow('Laxus', 'Fairy Tail');
-      confirmContainer.insertAdjacentHTML('afterbegin', html);
+    if (e.target.alt === "Yoruichi") {
+      overlay.classList.remove("hidden");
+      html = generateConfirmWindow("Yoruichi", "Bleach");
+      confirmContainer.insertAdjacentHTML("afterbegin", html);
     }
 
-    if (e.target.alt === 'Vegeta') {
-      overlay.classList.remove('hidden');
-      html = generateConfirmWindow('Vegeta', 'Dragon Ball');
-      confirmContainer.insertAdjacentHTML('afterbegin', html);
+    if (e.target.alt === "Laxus") {
+      overlay.classList.remove("hidden");
+      html = generateConfirmWindow("Laxus", "Fairy Tail");
+      confirmContainer.insertAdjacentHTML("afterbegin", html);
     }
-    if (e.target.alt === 'Ichigo') {
-      overlay.classList.remove('hidden');
-      html = generateConfirmWindow('Ichigo', 'Bleach');
-      confirmContainer.insertAdjacentHTML('afterbegin', html);
+
+    if (e.target.alt === "Vegeta") {
+      overlay.classList.remove("hidden");
+      html = generateConfirmWindow("Vegeta", "Dragon Ball");
+      confirmContainer.insertAdjacentHTML("afterbegin", html);
     }
-    if (e.target.alt === 'Saito') {
-      overlay.classList.remove('hidden');
-      html = generateConfirmWindow('Saito', 'Rurouni Kenshin');
-      confirmContainer.insertAdjacentHTML('afterbegin', html);
+    if (e.target.alt === "Ichigo") {
+      overlay.classList.remove("hidden");
+      html = generateConfirmWindow("Ichigo", "Bleach");
+      confirmContainer.insertAdjacentHTML("afterbegin", html);
+    }
+    if (e.target.alt === "Saito") {
+      overlay.classList.remove("hidden");
+      html = generateConfirmWindow("Saito", "Rurouni Kenshin");
+      confirmContainer.insertAdjacentHTML("afterbegin", html);
     }
   });
 }
 
 // Close confirmation window
-document.addEventListener('click', function (e) {
+document.addEventListener("click", function (e) {
   if (
-    e.target.className === 'overlay' ||
-    e.target.className === 'close__window'
+    e.target.className === "overlay" ||
+    e.target.className === "close__window"
   ) {
     closeConfirmWindow();
   }
 
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && !overlay.classList.contains('hidden')) {
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !overlay.classList.contains("hidden")) {
       closeConfirmWindow();
     }
   });
 
   //Begin game with Goku
-  if (e.target.className === 'start Goku') {
+  if (e.target.className === "start Goku") {
     closeConfirmWindow();
-    startGame(questionGokuOne, 'One');
-    changeIcon('goku', 'base', "Let's start with an easy one.", imgGokuBase);
+    startGame(questionGokuOne, "One");
+    changeIcon("goku", "base", "Let's start with an easy one.", imgGokuBase);
     gameStartedKey = 1;
   }
   // On right answer move to question 2 and change icon
-  if (e.target.defaultValue === 'Vegeta') {
-    startGame(questionGokuTwo, 'Two');
+  if (e.target.defaultValue === "Vegeta") {
+    startGame(questionGokuTwo, "Two");
     changeIcon(
-      'goku',
-      'right',
-      'Alright! Onto the next question.',
+      "goku",
+      "right",
+      "Alright! Onto the next question.",
       imgGokuRight
     );
     // On right answer move to question 3 and change icon
-  } else if (e.target.defaultValue === 'Instant Transmission') {
-    startGame(questionGokuThree, 'Three');
+  } else if (e.target.defaultValue === "Instant Transmission") {
+    startGame(questionGokuThree, "Three");
     changeIcon(
-      'goku',
-      'right',
-      'This is it. Show me what you got!',
+      "goku",
+      "right",
+      "This is it. Show me what you got!",
       imgGokuRight
     );
     // On right answer win game and bring up window
-  } else if (e.target.defaultValue === 'Fat Buu') {
+  } else if (e.target.defaultValue === "Fat Buu") {
     wonGame();
     // On wrong answer subtract score and change icon
-  } else if (gameStartedKey === 1 && e.target.classList.contains('answer')) {
+  } else if (gameStartedKey === 1 && e.target.classList.contains("answer")) {
     scoreCounter();
     changeIcon(
-      'goku',
-      'wrong',
-      'Aww man. I guess you need to train more.',
+      "goku",
+      "wrong",
+      "Aww man. I guess you need to train more.",
       imgGokuWrong
     );
   }
 
   //Begin game with Yoruichi
-  if (e.target.className === 'start Yoruichi') {
+  if (e.target.className === "start Yoruichi") {
     closeConfirmWindow();
-    startGame(questionYoruichiOne, 'One');
-    changeIcon('yoruichi', 'base', 'Show me what you got!', imgYoruichiBase);
+    startGame(questionYoruichiOne, "One");
+    changeIcon("yoruichi", "base", "Show me what you got!", imgYoruichiBase);
     gameStartedKey = 2;
   }
   // On right answer move to question 2 and change icon
-  if (e.target.defaultValue === 'Shunko') {
-    startGame(questionYoruichiTwo, 'Two');
+  if (e.target.defaultValue === "Shunko") {
+    startGame(questionYoruichiTwo, "Two");
     changeIcon(
-      'yoruichi',
-      'right',
+      "yoruichi",
+      "right",
       "I guess you're pretty fast after all.",
       imgYoruichiRight
     );
     // On right answer move to question 3 and change icon
-  } else if (e.target.defaultValue === 'Goddess of Flash') {
-    startGame(questionYoruichiThree, 'Three');
+  } else if (e.target.defaultValue === "Goddess of Flash") {
+    startGame(questionYoruichiThree, "Three");
     changeIcon(
-      'yoruichi',
-      'right',
+      "yoruichi",
+      "right",
       "You've got some skills, but this is the real test!",
       imgYoruichiRight
     );
     // On right answer win game and bring up window
-  } else if (e.target.defaultValue === 'Shihoin') {
+  } else if (e.target.defaultValue === "Shihoin") {
     wonGame();
     // On wrong answer subtract score and change icon
-  } else if (gameStartedKey === 2 && e.target.classList.contains('answer')) {
+  } else if (gameStartedKey === 2 && e.target.classList.contains("answer")) {
     scoreCounter();
     changeIcon(
-      'yoruichi',
-      'wrong',
+      "yoruichi",
+      "wrong",
       "Is that all you've got? I'm disappointed.",
       imgYoruichiWrong
     );
   }
 
   //Begin game with Laxus
-  if (e.target.className === 'start Laxus') {
+  if (e.target.className === "start Laxus") {
     closeConfirmWindow();
-    startGame(questionLaxusOne, 'One');
-    changeIcon('laxus', 'base', "Don't disappoint me.", imgLaxusBase);
+    startGame(questionLaxusOne, "One");
+    changeIcon("laxus", "base", "Don't disappoint me.", imgLaxusBase);
     gameStartedKey = 3;
   }
 
   // On right answer move to question 2 and change icon
-  if (e.target.defaultValue === 'His grandfather') {
-    startGame(questionLaxusTwo, 'Two');
-    changeIcon('laxus', 'base', 'Not bad.', imgLaxusRight);
+  if (e.target.defaultValue === "His grandfather") {
+    startGame(questionLaxusTwo, "Two");
+    changeIcon("laxus", "base", "Not bad.", imgLaxusRight);
     // On right answer move to question 3 and change icon
-  } else if (e.target.defaultValue === 'Lightning') {
-    startGame(questionLaxusThree, 'Three');
-    changeIcon('laxus', 'base', "Don't celebrate just yet!", imgLaxusRight);
+  } else if (e.target.defaultValue === "Lightning") {
+    startGame(questionLaxusThree, "Three");
+    changeIcon("laxus", "base", "Don't celebrate just yet!", imgLaxusRight);
     // On right answer win game and bring up window
-  } else if (e.target.defaultValue === 'His abdomen') {
+  } else if (e.target.defaultValue === "His abdomen") {
     wonGame();
     // On wrong answer subtract score and change icon
-  } else if (gameStartedKey === 3 && e.target.classList.contains('answer')) {
+  } else if (gameStartedKey === 3 && e.target.classList.contains("answer")) {
     scoreCounter();
-    changeIcon('laxus', 'wrong', 'You suck.', imgLaxusWrong);
+    changeIcon("laxus", "wrong", "You suck.", imgLaxusWrong);
   }
 
   //Begin game with Vegeta
-  if (e.target.className === 'start Vegeta') {
+  if (e.target.className === "start Vegeta") {
     closeConfirmWindow();
-    startGame(questionVegetaOne, 'One');
-    changeIcon('vegeta', 'base', 'Prove your worth to me.', imgVegetaBase);
+    startGame(questionVegetaOne, "One");
+    changeIcon("vegeta", "base", "Prove your worth to me.", imgVegetaBase);
     gameStartedKey = 4;
   }
   // On right answer move to question 2 and change icon
-  if (e.target.defaultValue === 'Cell') {
-    startGame(questionVegetaTwo, 'Two');
-    changeIcon('vegeta', 'right', "So you think you've won?", imgVegetaRight);
+  if (e.target.defaultValue === "Cell") {
+    startGame(questionVegetaTwo, "Two");
+    changeIcon("vegeta", "right", "So you think you've won?", imgVegetaRight);
     // On right answer move to question 3 and change icon
-  } else if (e.target.defaultValue === 'Beerus slapped Bulma') {
-    startGame(questionVegetaThree, 'Three');
-    changeIcon('vegeta', 'right', 'Show me your true power!', imgVegetaRight);
+  } else if (e.target.defaultValue === "Beerus slapped Bulma") {
+    startGame(questionVegetaThree, "Three");
+    changeIcon("vegeta", "right", "Show me your true power!", imgVegetaRight);
     // On right answer win game and bring up window
-  } else if (e.target.defaultValue === 'Frost cheated') {
+  } else if (e.target.defaultValue === "Frost cheated") {
     wonGame();
     // On wrong answer subtract score and change icon
-  } else if (gameStartedKey === 4 && e.target.classList.contains('answer')) {
+  } else if (gameStartedKey === 4 && e.target.classList.contains("answer")) {
     scoreCounter();
-    changeIcon('vegeta', 'wrong', 'Pathetic.', imgVegetaWrong);
+    changeIcon("vegeta", "wrong", "Pathetic.", imgVegetaWrong);
   }
   //Begin game with Ichigo
-  if (e.target.className === 'start Ichigo') {
+  if (e.target.className === "start Ichigo") {
     closeConfirmWindow();
-    startGame(questionIchigoOne, 'One');
+    startGame(questionIchigoOne, "One");
     changeIcon(
-      'ichigo',
-      'base',
+      "ichigo",
+      "base",
       "I'll take it easy on you for now.",
       imgIchigoBase
     );
     gameStartedKey = 5;
   }
   // On right answer move to question 2 and change icon
-  if (e.target.defaultValue === 'Tensa Zangetsu') {
-    startGame(questionIchigoTwo, 'Two');
+  if (e.target.defaultValue === "Tensa Zangetsu") {
+    startGame(questionIchigoTwo, "Two");
     changeIcon(
-      'ichigo',
-      'right',
-      'You might even make me use bankai!',
+      "ichigo",
+      "right",
+      "You might even make me use bankai!",
       imgIchigoRight
     );
     // On right answer move to question 3 and change icon
-  } else if (e.target.defaultValue === 'Orihime Inoue') {
+  } else if (e.target.defaultValue === "Orihime Inoue") {
     imgIchigoRight;
-    startGame(questionIchigoThree, 'Three');
+    startGame(questionIchigoThree, "Three");
     changeIcon(
-      'ichigo',
-      'right',
+      "ichigo",
+      "right",
       "Whoa. I didn't know this was your true power!",
       imgIchigoRight
     );
     // On right answer win game and bring up window
-  } else if (e.target.defaultValue === 'All of the above') {
+  } else if (e.target.defaultValue === "All of the above") {
     wonGame();
     // On wrong answer subtract score and change icon
-  } else if (gameStartedKey === 5 && e.target.classList.contains('answer')) {
+  } else if (gameStartedKey === 5 && e.target.classList.contains("answer")) {
     scoreCounter();
     changeIcon(
-      'ichigo',
-      'wrong',
-      'I thought you were stronger.',
+      "ichigo",
+      "wrong",
+      "I thought you were stronger.",
       imgIchigoWrong
     );
   }
 
   //Begin game with Saito
-  if (e.target.className === 'start Saito') {
+  if (e.target.className === "start Saito") {
     closeConfirmWindow();
-    startGame(questionSaitoOne, 'One');
-    changeIcon('saito', 'base', "I'm coming for you.", imgSaitoBase);
+    startGame(questionSaitoOne, "One");
+    changeIcon("saito", "base", "I'm coming for you.", imgSaitoBase);
     gameStartedKey = 6;
   }
   // On right answer move to question 2 and change icon
-  if (e.target.defaultValue === 'Shinsengumi') {
-    startGame(questionSaitoTwo, 'Two');
-    changeIcon('saito', 'right', 'You fight well.', imgSaitoRight);
+  if (e.target.defaultValue === "Shinsengumi") {
+    startGame(questionSaitoTwo, "Two");
+    changeIcon("saito", "right", "You fight well.", imgSaitoRight);
     // On right answer move to question 3 and change icon
-  } else if (e.target.defaultValue === 'The wolf of Mibu') {
-    startGame(questionSaitoThree, 'Three');
-    changeIcon('saito', 'right', "This isn't over just yet.", imgSaitoRight);
+  } else if (e.target.defaultValue === "The wolf of Mibu") {
+    startGame(questionSaitoThree, "Three");
+    changeIcon("saito", "right", "This isn't over just yet.", imgSaitoRight);
     // On right answer win game and bring up window
-  } else if (e.target.defaultValue === 'Fujita Goro') {
+  } else if (e.target.defaultValue === "Fujita Goro") {
     wonGame();
     // On wrong answer subtract score and change icon
-  } else if (gameStartedKey === 6 && e.target.classList.contains('answer')) {
+  } else if (gameStartedKey === 6 && e.target.classList.contains("answer")) {
     scoreCounter();
-    changeIcon('saito', 'wrong', "I'll kill you now.", imgSaitoWrong);
+    changeIcon("saito", "wrong", "I'll kill you now.", imgSaitoWrong);
   }
 
   // Restart game
-  if (e.target.className === 'restart' || e.target.className === 'start') {
+  if (e.target.className === "restart" || e.target.className === "start") {
     restartGame();
     scoreNum = 3;
   }
@@ -593,28 +572,5 @@ document.addEventListener('click', function (e) {
   // Game over
   if (scoreNum === 0) {
     lostGame();
-  }
-});
-
-// Header script
-
-const menu = document.querySelector('.menu-icon');
-const menuLinks = document.querySelector('.menu-links');
-let clicked = false;
-menu.addEventListener('click', function () {
-  clicked = !clicked;
-  if (clicked) {
-    const html = `<span class='menu-links'>
-              <a class='menu-link' href='/'>Home Page</a>
-              <a class='menu-link' href='/triviagame'>Trivia Game</a>
-              <a class='menu-link' href='/timeup'>TimeUp</a>
-          </span>`;
-    menu.insertAdjacentHTML('beforeend', html);
-  } else if (!clicked) {
-    menu.innerHTML = '';
-    const html = `<span class='menu-icon'>
-    <i class='fa fa-bars'></i>
-  </span>`;
-    menu.insertAdjacentHTML('afterbegin', html);
   }
 });

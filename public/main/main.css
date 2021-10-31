@@ -5,18 +5,20 @@ body {
   align-items: center;
   background-color: beige;
   color: rgb(28, 32, 27);
-  font-family: 'Nanum Gothic', sans-serif;
+  font-family: "Nanum Gothic", sans-serif;
 }
 
-#github-link {
+#github-link,
+#linkedin-link {
   margin-top: 4px;
   border: 2px solid seagreen;
   border-radius: 4px;
   text-decoration: none;
 }
 
-#github-link:hover {
-  background-color: thistle;
+#github-link:hover,
+#linkedin-link:hover {
+  background-color: rgb(247, 239, 247);
 }
 
 #links__link {
@@ -104,6 +106,7 @@ body {
   }
 
   .profile {
+    margin-top: 100px;
     margin-bottom: 50px;
     margin-left: 0;
     align-self: center;

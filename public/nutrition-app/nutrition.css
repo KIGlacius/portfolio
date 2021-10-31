@@ -1,0 +1,154 @@
+body {
+  font-family: "Nanum Gothic", sans-serif;
+  background-color: beige;
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  color: seagreen;
+}
+
+.search-container {
+  width: 50vw;
+  height: 75vh;
+  text-align: center;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  border: 4px solid seagreen;
+}
+
+.search-title {
+  padding: 10px 20px;
+  background-color: seagreen;
+  color: snow;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-input {
+  padding: 0 4px;
+  width: 40%;
+}
+
+.fetch-error-message {
+  padding: 0 4px;
+  width: 25%;
+  position: absolute;
+  margin-top: 10px;
+  color: red;
+}
+
+.food {
+  margin: 10px 5px;
+}
+
+.food-name {
+  font-size: large;
+  width: 35%;
+  margin: auto;
+  margin-top: 5px;
+}
+
+.logo {
+  width: 50px;
+}
+
+.search-results {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+.food-info {
+  width: 50vw;
+}
+
+.food-photo {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.nutrition-breakdown {
+  width: 75%;
+  display: flex;
+  flex-flow: column;
+  margin-bottom: 15px;
+  align-items: flex-start;
+  border: 2px solid seagreen;
+}
+
+.add-food {
+  margin: auto;
+}
+
+.food-serving {
+  margin: 15px 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 75%;
+  align-items: flex-start;
+  border: 2px solid seagreen;
+}
+
+@media screen and (max-width: 750px) {
+  .search-container {
+    font-size: 14px;
+    width: 85vw;
+    margin: 10px 0;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .food-serving {
+    border: none;
+    border-top: 2px solid seagreen;
+    width: 100%;
+    margin: none;
+    justify-content: center;
+    align-items: unset;
+  }
+
+  .nutrition-breakdown {
+    border: none;
+    border-top: 2px solid seagreen;
+    width: 100%;
+    margin: none;
+    justify-content: center;
+    align-items: unset;
+  }
+
+  .search-title {
+    padding: 10px 0;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .nutrition-breakdown {
+    border-bottom: 0px;
+  }
+
+  .search-container {
+    font-size: 12px;
+    width: 100vw;
+    height: 65vh;
+  }
+
+  .food-photo {
+    width: 75px;
+    height: 75px;
+  }
+
+  .food-name {
+    font-size: small;
+    width: 40%;
+  }
+  .search-input {
+    width: 70%;
+  }
+}

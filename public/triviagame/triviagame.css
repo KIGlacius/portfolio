@@ -1,12 +1,11 @@
 body {
   background-color: rgba(54, 68, 102, 1);
-  font-family: 'Nanum Gothic', sans-serif;
+  font-family: "Nanum Gothic", sans-serif;
 }
 
 .header {
   width: 50%;
   margin: auto;
-  margin-top: 75px;
   font-size: 100px;
   color: aliceblue;
   text-align: center;
@@ -16,6 +15,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
 }
 
 .icon__container {
@@ -264,7 +264,6 @@ body {
 }
 @media screen and (max-width: 612px) {
   body {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -399,7 +398,9 @@ body {
     height: 50px;
   }
   .restart {
-    left: 25px;
+    left: 0;
+    top: 150px;
+    font-size: medium;
   }
 }
 
@@ -407,5 +408,13 @@ body {
   .left,
   .right {
     top: 75%;
+  }
+
+  .question {
+    font-size: 25px;
+  }
+
+  .container {
+    margin-top: 50px;
   }
 }
