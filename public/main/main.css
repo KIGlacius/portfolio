@@ -95,7 +95,7 @@ body {
 
 @media screen and (max-width: 1060px) {
   .main {
-    width: 50%;
+    width: 85%;
     margin: auto;
     flex-direction: column;
     align-items: center;
@@ -115,5 +115,23 @@ body {
   .links,
   .bio {
     margin: 20px 0;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  .profile {
+    margin-top: 50px;
+    align-items: center;
+  }
+
+  .profile__pic {
+    height: 200px;
+    width: 200px;
+  }
+
+  #github-link,
+  #linkedin-link {
+    width: 150px;
   }
 }
