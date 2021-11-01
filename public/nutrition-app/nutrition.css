@@ -100,6 +100,7 @@ body {
   .search-container {
     font-size: 14px;
     width: 85vw;
+    height: 85vh;
     margin: 10px 0;
   }
 }
