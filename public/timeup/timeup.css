@@ -191,10 +191,7 @@ input[type="submit"] {
 .min {
   flex-grow: 1;
 }
-.years,
-.days {
-  font-weight: bold;
-}
+
 .hours {
   display: flex;
   justify-content: space-between;

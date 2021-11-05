@@ -2,6 +2,8 @@ class NutritionView {
   #parentElement = document.querySelector(".search-results");
   #data;
   render(data) {
+    const searchInputEl = document.querySelector(".search-input");
+    searchInputEl.value = "";
     this.#data = data;
     this.#clear();
     this.#parentElement.insertAdjacentHTML(
@@ -10,21 +12,21 @@ class NutritionView {
     );
   }
 
-  loadingMsg = function () {
+  loadingMsg() {
     this.#parentElement.innerHTML = "";
     const html = `<div class='loading-message'>Loading...
       </div>`;
     this.#parentElement.insertAdjacentHTML("afterbegin", html);
-  };
+  }
 
-  searchError = function () {
+  searchError() {
     const searchResultsEl = document.querySelector(".search-results");
     const searchInputEl = document.querySelector(".search-input");
     searchResultsEl.innerHTML = "";
     searchInputEl.style.borderColor = "red";
     const html = `<div class='fetch-error-message'>Could not retrieve data. Please try again.</div>`;
     searchResultsEl.insertAdjacentHTML("afterbegin", html);
-  };
+  }
 
   #clear() {
     this.#parentElement.innerHTML = "";

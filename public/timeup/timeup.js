@@ -1,4 +1,3 @@
-// Selector variables
 const searchBar = document.querySelector(".search__bar");
 const header = document.querySelector(".header");
 const login = document.querySelector(".login");
@@ -18,29 +17,7 @@ const runtimeContainer = document.querySelector(".runtime__container");
 
 let accountName;
 let runtimeTotal = 0;
-//------------------------------------------------------------------------------------------
-//functions
-const profClickedOpen = function () {
-  profileBox.style.backgroundColor = "rgba(236, 239, 240, 1)";
-  settingsBtn.classList.remove("hidden");
-  login.classList.remove("hidden");
-  profileName.style.visibility = "visible";
-};
 
-const profClickedClose = function () {
-  profileBox.style.backgroundColor = "rgba(236, 239, 240, 0)";
-  settingsBtn.classList.add("hidden");
-  login.classList.add("hidden");
-  profileName.style.visibility = "hidden";
-};
-
-const showLoginContainer = function () {
-  header.style.backgroundImage = "none";
-  loginContainer.classList.remove("hidden");
-  header.style.visibility = "hidden";
-  profileBox.style.visibility = "hidden";
-  timeUpLogo.style.visibility = "hidden";
-};
 const checkHidden = function () {
   document.querySelectorAll(".time__text").forEach((el) => {
     if (
@@ -73,13 +50,6 @@ const checkTimePlurality = function () {
     parseInt(timeMin.textContent) > 1 ? "minutes" : "minute";
 };
 
-const closeLoginContainer = function () {
-  header.style.backgroundImage = "url('/imgs/header.png')";
-  loginContainer.classList.add("hidden");
-  header.style.visibility = "visible";
-  profileBox.style.visibility = "visible";
-  timeUpLogo.style.visibility = "visible";
-};
 const search = async function () {
   const searchInput = searchBar.value;
   if (!searchInput) return;
@@ -109,8 +79,8 @@ const renderTime = function (parsedRuntime) {
       : Math.trunc(runtimeTotal / 60) + ":";
   timeDays.textContent =
     Math.trunc(runtimeTotal / (60 * 24)) >= 365
-      ? parseInt(timeDays.textContent) - 365
-      : Math.trunc(runtimeTotal / (60 * 24));
+      ? parseInt(timeDays.textContent) - 365 + ":"
+      : Math.trunc(runtimeTotal / (60 * 24)) + ":";
   timeYears.textContent = Math.trunc(runtimeTotal / (60 * 24 * 365));
   checkTimePlurality();
   checkHidden();
