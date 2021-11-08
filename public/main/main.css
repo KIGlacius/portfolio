@@ -3,33 +3,35 @@ body {
   flex-flow: column;
   justify-content: space-between;
   align-items: center;
-  background-color: beige;
-  color: rgb(28, 32, 27);
+  background-color: seagreen;
+  color: whitesmoke;
   font-family: "Nanum Gothic", sans-serif;
+  height: 100vh;
 }
 
 #github-link,
 #linkedin-link {
   margin-top: 4px;
-  border: 2px solid seagreen;
+  border: 2px solid whitesmoke;
   border-radius: 4px;
   text-decoration: none;
+  color: whitesmoke;
 }
 
 #github-link:hover,
 #linkedin-link:hover {
-  background-color: rgb(247, 239, 247);
+  border: 2px solid black;
+  color: black;
 }
 
 #links__link {
   margin-right: 0;
-  color: seagreen;
+  color: whitesmoke;
   border: none;
   text-decoration: underline;
 }
 
 .links__container {
-  margin: 2px 0;
   border-bottom: 1px solid seagreen;
   padding: 4px 0;
 }
@@ -51,6 +53,8 @@ body {
 #bio__body,
 .links__body {
   line-height: 1.5rem;
+  border: 2px solid whitesmoke;
+  padding: 0 5px;
 }
 
 #links__title,
@@ -59,11 +63,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: whitesmoke;
   width: 100%;
   text-align: center;
   height: 24px;
-  background-color: seagreen;
+  background-color: whitesmoke;
+  color: seagreen;
 }
 .main {
   margin-top: 50px;

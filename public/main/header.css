@@ -24,6 +24,7 @@
   width: 100%;
   align-items: center;
   color: whitesmoke;
+  border-bottom: 2px solid whitesmoke;
 }
 
 .page__links {
@@ -41,8 +42,8 @@
 }
 
 .footer {
-  background-color: seagreen;
-  color: whitesmoke;
+  background-color: whitesmoke;
+  color: black;
   width: 100%;
   text-align: center;
   padding: 10px;
