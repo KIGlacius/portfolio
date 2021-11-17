@@ -65,6 +65,5 @@ class NutritionView {
 `;
   }
 }
-/* <button class="add-food">Add To Daily Tracker</button>; */
 
 export default new NutritionView();
