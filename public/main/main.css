@@ -64,6 +64,20 @@ body {
   justify-content: space-evenly;
 }
 
+.svg,
+.preview-svg {
+  background-color: seagreen;
+  border: 2px solid seagreen;
+  border-radius: 2px;
+  height: 30px;
+  width: 30px;
+}
+
+.svg:hover,
+.preview-svg:hover {
+  border: 2px solid white;
+}
+
 .hidden-section {
   opacity: 0;
   transform: translateY(4rem);
@@ -158,13 +172,6 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-}
-
-.svg {
-  margin: 0 4px;
-  display: block;
-  height: 30px;
-  width: 30px;
 }
 
 .bio {
