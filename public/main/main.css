@@ -64,7 +64,7 @@ body {
   justify-content: space-evenly;
 }
 
-.svg,
+.svg-link,
 .preview-svg {
   background-color: seagreen;
   border: 2px solid seagreen;
