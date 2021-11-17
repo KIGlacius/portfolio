@@ -34,13 +34,13 @@ const init = function () {
   });
 
   setInterval(() => {
-    arrowDownSection1.style.marginBottom = "35px";
+    arrowDownSection1.style.marginTop = "35px";
     arrowDownSection1.style.transition = ".5s";
     arrowDownSection1.style.transitionTimingFunction = "ease-out";
   }, 1000);
 
   setInterval(() => {
-    arrowDownSection1.style.marginBottom = "25px";
+    arrowDownSection1.style.marginTop = "25px";
   }, 2000);
 
   setInterval(() => {
