@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kayl Karadjian</title>
     <link rel='icon' href='../imgs/logo.png'/>
-    <script defer src="../main/main.js"></script>
+    <script type='module' src="../main/main.js"></script>
     <script defer src='../main/header.js'></script>
+    
     <link rel="stylesheet" href="../main/reset.css" />
     <link rel="stylesheet" href="../main/main.css" />
     <link rel="stylesheet" href="../main/header.css" />
@@ -21,37 +22,113 @@
   <body>
     {{>header}}
     <section class='main'>
-        <div class='profile'>
-          <img class='profile__pic pic-1' src="/imgs/profilepic-1.jpg" />
-          <img class='hidden profile__pic pic-2' src="/imgs/profilepic-2.jpg" />
-          <img class='hidden profile__pic pic-3' src="/imgs/profilepic-3.jpg" />
-          <img class='hidden profile__pic pic-4' src="/imgs/profilepic-4.jpg" />
-          <a id='github-link' href='https://github.com/KIGlacius' target="_blank">Github: @KIGlacius</a>
-          <a id='linkedin-link' href='https://www.linkedin.com/in/kayl-karadjian-25a987224/' target="_blank">LinkedIn</a>
-        </div>
+          <div class='name-popin__kayl'><p class='color-green'>K</p>ayl</div>
+          <div class='name-popin__karadjian'><p class='color-green'>K</p>aradjian</div>
         <div class='bio'>
-          <h1 id='bio__title'>Bio</h1>
-          <p id='bio__body'>Hello and welcome to my page. My name is Kayl Karadjian. I love learning and exploring new things. I hold both a master's and bachelor's degree in Exercise Physiology. I build software every day. Please take a look at some of the projects I have worked on. You can find the links to those at the header up top or in the Links section of this page. You can also check out my LinkedIn and Github via the links underneath my photo.</p>
+          <p id='bio__body'>Hello and welcome to my page. I love learning and I develop software every day. Please take a look at some of the projects I have worked on. You can find the links to those at the nav bar up top or down below.</p>
         </div>
-        <div class='links'>
-          <h1 id='links__title'>Links</h1>
-          <ul>
-            <li class='links__container'>
-              <p class='links__body'>
-              <a id='links__link' href="/nutrition">Nutrition App</a> - a food-search app that allows the user to search the nutritional value of foods. Among other things, this project highlights OOP and the MVC architectural pattern for modern, clean, and maintainable code.
-              </p> 
-            </li>
-            <li class='links__container'>
-              <p class='links__body'>
-              <a id='links__link' href="/timeup">TimeUp</a> - a film-search app that allows the user to add film run times to a total. Among other things, this project highlights Async/Await and the fetch API,  and functions to accurately parse and render film runtimes onto an added total split between years, days, hours, and minutes. 
-              </p> 
-            </li>
-            <li class='links__container'>
-              <p class='links__body'><a id='links__link' href="/triviagame">Trivia Game</a> - an Anime-based trivia game where the user answers questions based on fictional characters. Among other things, this project highlights DOM manipulation such as event delegation and module bundling with Parcel.</p>
-            </li>
+        <div class='skills-container'>
+          <p>Skills</p>
+          <ul class='svg-icons'>
+        <img class='svg js-svg' src='../svg/js.svg'></img>
+        <img class='svg html-svg' src='../svg/html5.svg'></img>
+        <img class='svg css-svg' src='../svg/css3.svg'></img>
+        <img class='svg github-svg' src='../svg/github.svg'></img>
+        <img class='svg node-svg' src='../svg/node.svg'></img>
+        <img class='svg react-svg' src='../svg/react.svg'></img>
+        <img class='svg npm-svg' src='../svg/npm.svg'></img>
           </ul>
+        <h6>...And more!</h6>
+        <img class='angle angle-down-svg' src='../svg/angle-down.svg'></img>
         </div>
     </section>
+    <section class='app__container section-1'>
+      <div class='app__description'>
+        <h1>Nutrition Tracker</h1>
+        <p>This web app is a food-search app that allows the user to search the nutritional value of foods using the <b>Nutritionix API</b>. Among other things, this project highlights <b>OOP</b> and the <b>MVC architectural pattern for modern, clean, and maintainable code.</b> You can view a preview of the project here, play with it at its dedicated page, or check out its source code.</p>
+        <div class='app-links'>
+      <a href="/nutrition"><img class='svg svg-link' src='../svg/up-right-from-square.svg'></img></a>
+      <a href='https://github.com/KIGlacius/portfolio/tree/main/public/nutrition-app' target="_blank"> <img
+    src='../svg/file-code.svg'
+      class="svg svg-link filecode-svg"
+    ></img></a>
+        </div>
+      </div>
+      <a href='/nutrition' class='app__preview'>
+      <img src='../imgs/nutrition-app__preview.png' class='nutrition-preview'></img>
+      </a>
+    </section>
+  
+    <section class='app__container section-2'>
+      <a href='/timeup' class='app__preview'>
+      <img src='../imgs/timeup__preview.png' class='timeup-preview'></img>
+      </a>
+      <div class='app__description'>
+        <h1>TimeUp</h1>
+        <p>An app for searching films and rendering total watch time. Among other things, this project highlights <b>asynchronous JS with Async/Await</b> and <b>working with JSON and 3rd party APIs like OMDb.</b> You can view a preview of the project here,play with it at its dedicated page, or check out its source code.</p>
+        <div class='app-links'>
+      <a href="/timeup"><img class='svg svg-link' src='../svg/up-right-from-square.svg'></img></a>
+      <a href='https://github.com/KIGlacius/portfolio/tree/main/public/timeup' target="_blank"> <img
+    src='../svg/file-code.svg'
+      class="svg svg-link filecode-svg"
+    ></img></a>
+        </div>
+      </div>
+    </section>
+    
+    <section class='app__container section-3'>
+      <div class='app__description'>
+        <h1>Trivia Game</h1>
+        <p>An Anime-based trivia game where the user answers questions based on fictional characters. Among other things, this project highlights <b>event delegation and state management.</b> You can view a preview of the project here, play with it at its dedicated page, or check out its source code.</p>
+        <div class='app-links'>
+      <a href="/triviagame"><img class='svg svg-link' src='../svg/up-right-from-square.svg'></img></a>
+      <a href='https://github.com/KIGlacius/portfolio/tree/main/public/triviagame' target="_blank"> <img
+    src='../svg/file-code.svg'
+      class="svg svg-link filecode-svg"
+    ></img></a>
+        </div>
+      </div>
+        <a href='/triviagame' class='app__preview'>
+      <img src='../imgs/triviagame__preview.png' class='triviagame-preview'></img>
+      </a>
+    </section>
+    <section class='section-sliders'>
+      <div class="sliders-title"><h1>Other Projects</h1>
+      <p>Take a look at some of my other projects currently in development.</p></div>
+      <div class='sliders-container'>
+            <div class='slider-arrow left-arrow'><</div>
+      <ul class='sliders'>
+        <li class='project-slider slider-1'>
+          <div class='preview-description'>
+          <h2>Expense Tracker</h2>
+          <p>I developed a web app that allows the user to add and track expenses by month using <b>React</b>.</p>
+          <a href='https://github.com/KIGlacius/expense-tracker-app' target="_blank"><img src="../svg/file-code.svg" class="preview-svg"></a>
+          </div>
+          <img class ='preview-img' src='../imgs/expense-tracker-app__preview.png'></img></li> 
+          
+          <li class='project-slider slider-2'>
+          <div class='preview-description'>
+          <h2>Chat App</h2>
+          <p> I Developed a web app as a course project that allows users to join a room and send messages to each other in real-time using <b>Socket.io</b> and <b>Express</b>.</p>
+          <a href='https://github.com/KIGlacius/chat-app' target="_blank"><img src="../svg/file-code.svg" class="preview-svg"></a>
+          </div>
+          <img class ='preview-img' src='../imgs/chat-app__preview.png'></img></li> 
+          
+          <li class='project-slider slider-3'>
+          <div class='preview-description'>
+          <h2>Task App API</h2>
+          <p>I Developed an Express app as a course project that allows users to create and manage tasks using <b>MongoDB/Mongoose for CRUD operations</b> in addition to building a <b>Rest API</b>, and libraries such as <b>JWT</b> and <b>bcrypt</b> for authentication and password protection. In this project, I also incorporated <b>Jest</b> for code-testing.</p>
+          <a href='https://github.com/KIGlacius/taskapi' target="_blank"><img src="../svg/file-code.svg" class="preview-svg"></a>
+          </div>
+          <img class ='preview-img' src='../imgs/task-app__preview.png'></img></li>
+      </ul>
+            <div class='slider-arrow right-arrow'>></div>
+      </div>
+      </section>
+      <div class='angle-up-container'>
+
+      <img class='angle angles-up-svg' src='../svg/angles-up.svg'></img>
+      </div>
     {{>footer}}
   </body>
 </html>

@@ -3,40 +3,168 @@ body {
   flex-flow: column;
   justify-content: space-between;
   align-items: center;
-  background-color: seagreen;
+  background-color: #1a1f1c;
   color: whitesmoke;
   font-family: "Nanum Gothic", sans-serif;
+  overflow-x: hidden;
+}
+
+.app__container {
   height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
 }
 
-#github-link,
-#linkedin-link {
-  margin-top: 4px;
-  border: 2px solid whitesmoke;
-  border-radius: 4px;
-  text-decoration: none;
-  color: whitesmoke;
+.app__preview {
+  margin: 150px 50px;
+  border-radius: 10px;
+  position: relative;
+  width: 40%;
+  height: 75%;
 }
 
-#github-link:hover,
-#linkedin-link:hover {
-  border: 2px solid black;
-  color: black;
+.app__preview img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
 }
 
-#links__link {
-  margin-right: 0;
-  color: whitesmoke;
-  border: none;
-  text-decoration: underline;
+.app__description {
+  margin: 200px 50px;
+  position: relative;
+  width: 40%;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.links__container {
-  border-bottom: 1px solid seagreen;
-  padding: 4px 0;
+.app__description h1 {
+  font-size: 24px;
+  margin: 10px 0;
+  color: seagreen;
+  border-bottom: 1px solid white;
 }
 
-.links,
+.app__description p {
+  text-align: center;
+  font-size: 18px;
+  line-height: 2rem;
+  margin: 10px 0;
+}
+
+.app__container b {
+  color: seagreen;
+}
+
+.app-links {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.hidden-section {
+  opacity: 0;
+  transform: translateY(4rem);
+}
+
+.name-popin__kayl {
+  left: -60vw;
+}
+.name-popin__karadjian {
+  right: -60vw;
+}
+
+.color-green {
+  display: inline;
+  color: seagreen;
+}
+
+.name-popin__kayl,
+.name-popin__karadjian {
+  position: relative;
+  font-size: 48px;
+  color: white;
+}
+
+.skills-container p {
+  color: seagreen;
+  padding: 10px 0;
+  font-size: x-large;
+  text-align: center;
+  margin: 25px 0;
+  border-bottom: 2px solid white;
+  width: 100%;
+}
+
+.skills-container h6 {
+  color: seagreen;
+  margin-top: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.svg-icons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.html-svg {
+  background-color: orange;
+}
+
+.js-svg {
+  background-color: yellow;
+}
+
+.css-svg {
+  background-color: rgb(0, 81, 255);
+}
+
+.github-svg {
+  background-color: white;
+  border-radius: 50%;
+}
+
+.node-svg {
+  background-color: green;
+}
+
+.react-svg {
+  background-color: skyblue;
+  border-radius: 50%;
+}
+
+.npm-svg {
+  background-color: tomato;
+}
+
+.angle-up-container {
+  height: 100px;
+}
+
+.angle {
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  margin: 25px 0;
+}
+
+.angle-down-svg {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.svg {
+  margin: 0 4px;
+  display: block;
+  height: 30px;
+  width: 30px;
+}
+
 .bio {
   border-radius: 6px;
   width: 300px;
@@ -47,6 +175,7 @@ body {
 }
 
 .bio {
+  margin-top: 50px;
   margin-right: 0;
 }
 
@@ -57,23 +186,13 @@ body {
   padding: 0 5px;
 }
 
-#links__title,
-#bio__title {
-  border-radius: 6px 6px 0 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  text-align: center;
-  height: 24px;
-  background-color: whitesmoke;
-  color: seagreen;
-}
 .main {
-  margin-top: 50px;
+  height: 100vh;
+  margin-top: 100px;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
 
 .profile {
@@ -92,50 +211,149 @@ body {
   display: block;
 }
 
+.sliders {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.section-sliders {
+  width: 75%;
+  height: 75vh;
+  margin: 200px 0;
+}
+.sliders-title {
+  padding: 20px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.sliders-title h1 {
+  font-size: 24px;
+  margin: 10px 0;
+  color: seagreen;
+}
+
+.sliders-title p {
+  font-size: 18px;
+  color: white;
+}
+
+.sliders-container {
+  height: 90%;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+
+.preview-description {
+  align-self: flex-start;
+  margin-right: 10px;
+  width: 100%;
+}
+
+.project-slider {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.project-slider h2 {
+  color: seagreen;
+  margin-bottom: 10px;
+}
+.project-slider b {
+  color: seagreen;
+}
+.project-slider img {
+  align-self: flex-start;
+}
+
+.preview-svg {
+  width: 30px;
+  margin-top: 10px;
+}
+
+.preview-img {
+  height: 90%;
+  width: 65%;
+  border-radius: 10px;
+}
+
+.slider-arrow {
+  font-size: 30px;
+  margin: 0 20px;
+  cursor: pointer;
+}
+
 .hidden {
   opacity: 0;
   position: absolute;
 }
 
 @media screen and (max-width: 1060px) {
+  .section-sliders {
+    width: 100%;
+    margin: 200px 20px;
+  }
   .main {
-    width: 85%;
-    margin: auto;
+    width: 50%;
+  }
+
+  .app__container {
+    align-items: center;
+    height: 75vh;
+  }
+
+  .app__preview {
+    height: 100%;
+    width: 75%;
+    margin: 20px;
+  }
+
+  .app__description {
+    justify-content: center;
+    margin: 0 20px;
+  }
+
+  .app__description p {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .app__container {
+    margin: 100px 0;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .app__description {
+    height: 75%;
+    width: 75%;
+  }
+
+  .project-slider {
+    flex-flow: column;
+  }
+
+  .preview-description {
+    align-self: center;
+    margin-bottom: 20px;
+    margin-right: 0;
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .links {
-    margin-right: 0;
-  }
-
-  .profile {
-    margin-top: 100px;
-    margin-bottom: 50px;
-    margin-left: 0;
+  .project-slider img {
     align-self: center;
   }
 
-  .links,
-  .bio {
-    margin: 20px 0;
+  .preview-img {
     width: 100%;
-  }
-}
-
-@media screen and (max-width: 325px) {
-  .profile {
-    margin-top: 50px;
-    align-items: center;
-  }
-
-  .profile__pic {
-    height: 200px;
-    width: 200px;
-  }
-
-  #github-link,
-  #linkedin-link {
-    width: 150px;
   }
 }
